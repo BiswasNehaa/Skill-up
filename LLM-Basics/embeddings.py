@@ -44,3 +44,25 @@ for i in indexes[0]:
     print(f"  → {sentences[i]}" )
 
 
+query = " I like Biryani"
+query_vector = model.encode([query]).astype('float32')
+
+# Search top 2 most similar
+distances, indexes = index.search(query_vector, k=2)
+
+print("Most similar sentences:")
+for i in indexes[0]:
+    print(f"  → {sentences[i]}" )
+    
+    
+    
+
+query = " How's the climate working"
+query_vector = model.encode([query]).astype('float32')
+
+# Search top 2 most similar
+distances, indexes = index.search(query_vector, k=2)
+
+print("Most similar sentences:")
+for i in indexes[0]:
+    print(f"  → {sentences[i]}" )
